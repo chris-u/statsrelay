@@ -60,43 +60,43 @@ add_executable(statsrelay ${SOURCE_FILES} src/main.c)
 add_executable(stresstest src/stresstest.c)
 add_executable(stathasher ${SOURCE_FILES} src/stathasher.c)
 
-target_link_libraries(stathasher ev pcre jansson)
-target_link_libraries(statsrelay ev pcre jansson)
+target_link_libraries(stathasher ev pcre jansson rt)
+target_link_libraries(statsrelay ev pcre jansson rt)
 
 add_executable(test_hashlib ${SOURCE_FILES} src/tests/test_hashlib.c)
-target_link_libraries(test_hashlib ev pcre jansson)
+target_link_libraries(test_hashlib ev pcre jansson rt)
 add_test(NAME test_hashlib COMMAND test_hashlib)
 
 add_executable(test_hashmap ${SOURCE_FILES} src/tests/test_hashmap.c)
-target_link_libraries(test_hashmap ev pcre jansson)
+target_link_libraries(test_hashmap ev pcre jansson rt)
 add_test(NAME test_hashmap COMMAND test_hashmap)
 
 add_executable(test_hashring ${SOURCE_FILES} src/tests/test_hashring.c)
-target_link_libraries(test_hashring ev pcre jansson)
+target_link_libraries(test_hashring ev pcre jansson rt)
 add_test(NAME test_hashring COMMAND test_hashring WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/src/tests)
 
 add_executable(test_vector ${SOURCE_FILES} src/tests/test_vector.c)
-target_link_libraries(test_vector ev pcre jansson)
+target_link_libraries(test_vector ev pcre jansson rt)
 add_test(NAME test_vector COMMAND test_vector)
 
 add_executable(test_sampler ${SOURCE_FILES} src/tests/test_sampler.c)
-target_link_libraries(test_sampler ev pcre jansson)
+target_link_libraries(test_sampler ev pcre jansson rt)
 add_test(NAME test_sampler COMMAND test_sampler)
 
 add_executable(test_buffer ${SOURCE_FILES} src/tests/test_buffer.c)
-target_link_libraries(test_buffer ev pcre jansson)
+target_link_libraries(test_buffer ev pcre jansson rt)
 add_test(NAME test_buffer COMMAND test_buffer)
 
 add_executable(test_timer_sampler ${SOURCE_FILES} src/tests/test_timer_sampler.c)
-target_link_libraries(test_timer_sampler ev pcre jansson)
+target_link_libraries(test_timer_sampler ev pcre jansson rt)
 add_test(NAME test_timer_sampler COMMAND test_timer_sampler)
 
 add_executable(test_gauge_sampler ${SOURCE_FILES} src/tests/test_gauge_sampler.c)
-target_link_libraries(test_gauge_sampler ev pcre jansson)
+target_link_libraries(test_gauge_sampler ev pcre jansson rt)
 add_test(NAME test_gauge_sampler COMMAND test_gauge_sampler)
 
 add_executable(test_validate ${SOURCE_FILES} src/tests/test_validate.c)
-target_link_libraries(test_validate ev pcre jansson)
+target_link_libraries(test_validate ev pcre jansson rt)
 add_test(NAME test_validate COMMAND test_validate)
 
 
